@@ -1,0 +1,10 @@
+name: GriefHeal
+version: 1.2
+main: com.adamwbb.healer.GriefHeal
+api-version: '1.21'
+author: adamwbb
+commands:
+  gh:
+    description: Main command for GriefHeal
+    permission: griefheal.admin
+    usage: /gh <reload|healnow>

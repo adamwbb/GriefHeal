@@ -1,0 +1,38 @@
+# GriefHeal Config
+
+# Delay in seconds before restoration starts (Default is 6 minutes)
+restoration-delay: 360
+
+# How many blocks to restore per tick (1 tick = 0.05s)
+blocks-per-tick: 10
+
+features:
+  # Should fire damage (burned blocks) heal?
+  heal-fire-damage: true
+  # Should chests/barrels/shulkers come back with their loot?
+  restore-chest-items: true
+
+# Worlds where GriefHeal will do NOTHING
+world-blacklist:
+  - creative_world
+  - hub_world
+
+# Which explosion types should be healed?
+explosions:
+  creeper: true
+  primed_tnt: true
+  fireball: true
+  wither: true
+  wither_skull: true
+  end_crystal: true
+  tnt_minecart: true
+  block_explosion: true
+
+# Blocks that will NEVER be restored
+blacklist:
+  - TNT
+  - END_CRYSTAL
+  - TNT_MINECART
+  - BEACON
+  - BEDROCK
+  - RESPAWN_ANCHOR
