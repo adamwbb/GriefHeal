@@ -1,3 +1,4 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 # GriefHeal 🛠️
 
 GriefHeal is a high-performance world restoration plugin for Minecraft 1.21.1.
