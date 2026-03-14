@@ -1,10 +1,18 @@
 name: GriefHeal
-version: 1.2
-main: com.adamwbb.healer.GriefHeal
-api-version: '1.21'
-author: adamwbb
+version: 1.3
+main: com.webbservermc.griefheal.GriefHeal
+api-version: 1.21
+description: World restoration with SQLite, spatial debouncing, and priority sorting.
+authors: [adamwbb]
+
 commands:
-  gh:
-    description: Main command for GriefHeal
+  griefheal:
+    description: Main command for GriefHeal.
+    aliases: [gh]
     permission: griefheal.admin
-    usage: /gh <reload|healnow>
+    usage: /<command> [reload|now]
+
+permissions:
+  griefheal.admin:
+    description: Allows access to reload and force heal commands.
+    default: op

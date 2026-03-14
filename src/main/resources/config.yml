@@ -6,6 +6,9 @@ restoration-delay: 360
 # How many blocks to restore per tick (1 tick = 0.05s)
 blocks-per-tick: 10
 
+# Spatial Debounce: Max distance to group explosions as one "event"
+spatial-debounce-radius: 50.0
+
 features:
   # Should fire damage (burned blocks) heal?
   heal-fire-damage: true
@@ -36,3 +39,8 @@ blacklist:
   - BEACON
   - BEDROCK
   - RESPAWN_ANCHOR
+
+# Visuals and Audio
+effects:
+  sounds-enabled: true
+  particles-enabled: true
