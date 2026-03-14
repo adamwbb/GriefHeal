@@ -167,7 +167,7 @@ public class GriefHeal extends JavaPlugin {
         boolean showParticles = getConfig().getBoolean("effects.particles-enabled");
 
         if (playSounds) {
-            center.getWorld().playSound(center, Sound.BLOCK_BEACON_ACTIVATE, 1.0f, 0.6f);
+            center.getWorld().playSound(center, Sound.BLOCK_BEACON_ACTIVATE, 8.0f, 0.6f);
         }
 
         new BukkitRunnable() {
@@ -180,7 +180,7 @@ public class GriefHeal extends JavaPlugin {
             public void run() {
                 if (playSounds) {
                     if (soundCooldown <= 0) {
-                        center.getWorld().playSound(center, Sound.BLOCK_BEACON_AMBIENT, 1.0f, 0.6f);
+                        center.getWorld().playSound(center, Sound.BLOCK_BEACON_AMBIENT, 8.0f, 0.6f);
                         soundCooldown = soundInterval;
                     }
                     soundCooldown--;
