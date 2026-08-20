@@ -22,15 +22,15 @@
     </repositories>
 
     <dependencies>
-        <!-- Paper API -->
+        <!-- Paper API Installed Locally in Action -->
         <dependency>
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
-            <version>26.2.build.112-stable</version>
+            <version>26.2-build112</version>
             <scope>provided</scope>
         </dependency>
 
-        <!-- SQLite Driver (Provided by Paper at runtime) -->
+        <!-- SQLite Driver -->
         <dependency>
             <groupId>org.xerial</groupId>
             <artifactId>sqlite-jdbc</artifactId>
