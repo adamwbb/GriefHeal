@@ -8,8 +8,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Query Exact Paper API Versions
+    - name: List Files in 26.2.build.112-stable
       run: |
-        echo "=== LAST 25 PUBLISHED PAPER-API VERSIONS ==="
-        curl -sL https://repo.papermc.io/repository/maven-public/io/papermc/paper/paper-api/maven-metadata.xml | grep -o '<version>[^<]*</version>' | tail -n 25
-        echo "==========================================="
+        echo "=== FILES IN 26.2.build.112-stable DIRECTORY ==="
+        curl -sL https://repo.papermc.io/repository/maven-public/io/papermc/paper/paper-api/26.2.build.112-stable/maven-metadata.xml || true
+        echo "--- Directory HTML / File listing ---"
+        curl -sL https://repo.papermc.io/repository/maven-public/io/papermc/paper/paper-api/26.2.build.112-stable/ | grep -iE '\.jar|\.pom' || true
+        echo "==============================================="
+        
