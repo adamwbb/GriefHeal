@@ -23,11 +23,12 @@
     </repositories>
 
     <dependencies>
-        <!-- Paper API Build 112 -->
+        <!-- Paper API with Mojang-Mapped Classifier -->
         <dependency>
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
             <version>26.2.build.112-stable</version>
+            <classifier>mojang-mapped</classifier>
             <scope>provided</scope>
         </dependency>
 
