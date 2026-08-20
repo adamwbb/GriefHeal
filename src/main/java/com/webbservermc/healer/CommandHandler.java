@@ -1,4 +1,4 @@
-package com.webbservermc.healer;
+package com.webbservermc.griefheal;
 
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.command.Command;
