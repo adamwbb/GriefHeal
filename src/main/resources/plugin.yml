@@ -1,7 +1,7 @@
 name: GriefHeal
 version: 1.4
 main: com.webbservermc.griefheal.GriefHeal
-api-version: '26.2'
+api-version: '1.26'
 description: World restoration with SQLite, spatial debouncing, and priority sorting.
 authors: [adamwbb]
 
