@@ -1,33 +1,37 @@
-package com.webbservermc.griefheal;
+package com.webbservermc.healer;
 
+import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.jetbrains.annotations.NotNull;
 
 public class CommandHandler implements CommandExecutor {
+    private static final MiniMessage MM = MiniMessage.miniMessage();
+
     @Override
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if (!sender.hasPermission("griefheal.admin")) {
-            sender.sendMessage("§cYou do not have permission to use this command.");
+            sender.sendMessage(MM.deserialize("<red>You do not have permission to use this command.</red>"));
             return true;
         }
-        
+
         if (args.length > 0) {
             if (args[0].equalsIgnoreCase("reload")) {
-                GriefHeal.getInstance().reloadConfig();
-                sender.sendMessage("§a[GriefHeal] Config reloaded.");
+                GriefHeal.getInstance().reloadPluginConfig();
+                sender.sendMessage(MM.deserialize("<green>[GriefHeal] Configuration and entity cache reloaded.</green>"));
                 return true;
             } else if (args[0].equalsIgnoreCase("now")) {
                 GriefHeal.getInstance().processAll();
-                sender.sendMessage("§a[GriefHeal] Manual restoration triggered.");
+                sender.sendMessage(MM.deserialize("<green>[GriefHeal] Immediate restoration triggered for all active craters.</green>"));
                 return true;
             }
         }
-        
-        sender.sendMessage("§8=== §aGriefHeal Commands §8===");
-        sender.sendMessage("§7/gh reload §f- Reloads the config.yml");
-        sender.sendMessage("§7/gh now §f- Forces all pending restorations to finish immediately");
-        
+
+        sender.sendMessage(MM.deserialize("<dark_gray>=== <green>GriefHeal Commands</green> <dark_gray>==="));
+        sender.sendMessage(MM.deserialize("<gray>/gh reload <white>- Reloads config.yml and caching tables"));
+        sender.sendMessage(MM.deserialize("<gray>/gh now <white>- Forces all active restorations to complete immediately"));
+
         return true;
     }
 }
