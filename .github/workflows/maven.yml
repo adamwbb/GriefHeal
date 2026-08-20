@@ -25,11 +25,6 @@ jobs:
         distribution: 'temurin'
         cache: maven
 
-    - name: Download & Install Paper Jar
-      run: |
-        curl -o paper.jar "https://fill-data.papermc.io/v1/objects/bd3a58cf96874e5ea6643f5f6fe9b4f5bf9e34b795fa078c2f0ee8b98b2f907e/paper-26.2-112.jar"
-        mvn install:install-file -Dfile=paper.jar -DgroupId=io.papermc.paper -DartifactId=paper-api -Dversion=26.2-build112 -Dpackaging=jar
-
     - name: Build with Maven
       run: mvn -B clean package --file pom.xml
 
